@@ -1,0 +1,44 @@
+﻿@model WebApp.Models.AutorViewModel
+
+<h1>Cadastrar Autor</h1>
+
+<form asp-action="Novo">
+    <div class="card">
+        <div class="card-header text-center">Autor</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="Nome"></label>
+                    <input type="text" asp-for="Nome" class="form-control" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Linkedin"></label>
+                    <input type="url" asp-for="Linkedin" class="form-control" />
+                    <span asp-validation-for="Linkedin" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-md-2">
+                    <input type="submit" value="Gravar" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-2">
+        <a class="btn btn-dark" asp-controller="Autor" asp-action="Index"> Voltar</a>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

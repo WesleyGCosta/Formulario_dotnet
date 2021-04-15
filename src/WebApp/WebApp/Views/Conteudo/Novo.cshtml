@@ -1,0 +1,62 @@
+﻿@model WebApp.Models.ConteudoViewModel
+
+<h1>Cadastro de Conteúdo</h1>
+
+<form asp-action="Novo">
+    <div class="card">
+        <div class="card-header text-center">Conteúdo</div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="Titulo"></label>
+                    <input type="text" asp-for="Titulo" class="form-control" />
+                    <span asp-validation-for="Titulo" class="text-danger"></span>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="DataDoCadastro"></label>
+                    <input type="date" asp-for="DataDoCadastro" class="form-control" />
+                    <span asp-validation-for="DataDoCadastro" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="Texto"></label>
+                    <input type="text" asp-for="Texto" class="form-control" />
+                    <span asp-validation-for="Texto" class="text-danger"></span>
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Link"></label>
+                    <input type="url" asp-for="Link" class="form-control" />
+                    <span asp-validation-for="Link" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label asp-for="Descricao"></label>
+                    <input type="text" asp-for="Descricao" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-md-2">
+                    <input type="submit" value="Gravar" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-2">
+        <a class="btn btn-dark" asp-controller="Conteudo" asp-action="Index">Voltar</a>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
